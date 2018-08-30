@@ -8,18 +8,18 @@ import AddTaskForm from './AddTaskForm.jsx';
 
 class App extends Component {
   state = {
-    taskList: {}
+    toDoList: []
   };
 
   handleAddTask = newTask => {
-    // console.log('newTask');
-    // console.log(newTask);
+    const toDoList = [...this.state.toDoList, newTask];
+    this.setState({ toDoList });
+  };
 
-    const taskList = { ...this.state.taskList };
-
-    taskList[`Task-id#_${Date.now()}`] = newTask;
-
-    this.setState({ taskList });
+  handleTaskStatus = taskIndex => {
+    const taskForUpdate = [...this.state.toDoList];
+    taskForUpdate[taskIndex].completed = !taskForUpdate[taskIndex].completed;
+    this.setState({ toDoList: taskForUpdate });
   };
 
   render() {
@@ -28,7 +28,7 @@ class App extends Component {
         <Header />
         <Page>
           <AddTaskForm addTask={this.handleAddTask} />
-          <Inventory />
+          <Inventory toDoList={this.state.toDoList} taskStatus={this.handleTaskStatus} />
         </Page>
       </Fragment>
     );

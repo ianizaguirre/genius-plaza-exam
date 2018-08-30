@@ -7,6 +7,7 @@ const Wrapper = styled.header`
   background-color: #222;
   height: 150px;
   padding: 20px;
+  margin-bottom: 35px;
   color: #fff;
   text-align: center;
 `;
@@ -22,11 +23,7 @@ const Header = () => (
     <Wrapper>
       <Logo src={logo} className="App-logo" alt="logo" />
 
-      <Title>Welcome to React</Title>
-
-      <p>
-        To get started, edit <code>src/App.js</code> and save to reload.
-      </p>
+      <Title>To-Do List</Title>
     </Wrapper>
   </Fragment>
 );
