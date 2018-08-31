@@ -2,15 +2,20 @@ import React, { Fragment, Component } from 'react';
 
 class Counter extends Component {
   render() {
-    // const { index, content, id } = this.props;
+    const { activeCount } = this.props;
 
-    // const handleTaskNumber = index + 1;
+    const pluralize = Object.values({ activeCount })[0];
 
-    const handleTaskNumber = 1;
+    // console.log(pluralize);
+    // console.log(typeof pluralize);
+
+    const item_S = pluralize === 1 ? 'item' : 'items';
 
     return (
       <Fragment>
-        <p> {handleTaskNumber} itemSS left</p>
+        <p>
+          <strong>{activeCount}</strong> {item_S} left
+        </p>
       </Fragment>
     );
   }

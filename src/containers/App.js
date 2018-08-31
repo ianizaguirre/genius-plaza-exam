@@ -70,6 +70,7 @@ class App extends Component {
     return (
       <Fragment>
         <Header />
+        <Counter activeCount={this.state.activeCount} />
         <Page>
           <AddTaskForm addTask={this.handleAddTask} />
           <Inventory
