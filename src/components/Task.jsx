@@ -13,7 +13,7 @@ class Task extends Component {
 
         <button
           onClick={() => {
-            this.props.deleteTask(id);
+            this.props.deleteTask(id, index);
           }}
         >
           Delete Task →
