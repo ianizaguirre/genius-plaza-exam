@@ -22,13 +22,34 @@ class App extends Component {
     this.setState({ toDoList: taskForUpdate });
   };
 
+  // handleDeleteTask = taskIndex => {
+
+  //   const taskForUpdate = this.state.toDoList.filter((_, itemIndex) => {
+  //     return itemIndex !== taskIndex;
+  //   });
+
+  //   this.setState({ toDoList: taskForUpdate });
+  // };
+
+  handleDeleteTask = taskID => {
+    const taskForUpdate = this.state.toDoList.filter(item => {
+      return item.id !== taskID;
+    });
+
+    this.setState({ toDoList: taskForUpdate });
+  };
+
   render() {
     return (
       <Fragment>
         <Header />
         <Page>
           <AddTaskForm addTask={this.handleAddTask} />
-          <Inventory toDoList={this.state.toDoList} taskStatus={this.handleTaskStatus} />
+          <Inventory
+            toDoList={this.state.toDoList}
+            taskStatus={this.handleTaskStatus}
+            deleteTask={this.handleDeleteTask}
+          />
         </Page>
       </Fragment>
     );

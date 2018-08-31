@@ -3,13 +3,21 @@ import Checkbox from './Checkbox';
 
 class Task extends Component {
   render() {
-    const { index, content } = this.props;
+    const { index, content, id } = this.props;
 
     const handleTaskNumber = index + 1;
 
     return (
       <Fragment>
-        <Checkbox taskStatus={this.props.taskStatus} index={this.props.index} />
+        <Checkbox taskStatus={this.props.taskStatus} index={index} />
+
+        <button
+          onClick={() => {
+            this.props.deleteTask(id);
+          }}
+        >
+          Delete Task →
+        </button>
 
         <p>Task {handleTaskNumber} ...</p>
 

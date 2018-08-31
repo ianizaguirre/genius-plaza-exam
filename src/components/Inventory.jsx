@@ -5,7 +5,14 @@ import Task from './Task';
 const Inventory = props => (
   <Fragment>
     {props.toDoList.map((item, index) => (
-      <Task key={item.id} index={index} content={item.content} taskStatus={props.taskStatus} />
+      <Task
+        key={item.id}
+        id={item.id}
+        index={index}
+        content={item.content}
+        taskStatus={props.taskStatus}
+        deleteTask={props.deleteTask}
+      />
     ))}
   </Fragment>
 );
