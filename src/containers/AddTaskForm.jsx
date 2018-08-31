@@ -11,31 +11,36 @@ class AddTaskForm extends Component {
     this.setState({ content: event.target.value });
   };
 
-  handleCreateTask = event => {
+  handleSubmit = event => {
     event.preventDefault();
 
     const makeNewTask = {
       id: Date.now(),
-      content: this.state.content,
+      content: this.state.content.trim(),
       completed: this.state.completed
     };
 
-    // Send New Task UpStream
-    this.props.addTask(makeNewTask);
+    if (makeNewTask.content) {
+      // Send Newly Created Task UpStream
+      this.props.addTask(makeNewTask);
+    }
 
+    // Clear Form Input
     event.currentTarget.reset();
+    this.setState({ content: '' });
   };
 
   render() {
     return (
       <Fragment>
-        <form onSubmit={this.handleCreateTask}>
+        <form onSubmit={this.handleSubmit}>
           <input
             name="summary"
             onChange={this.handleTextChange}
             value={this.state.content}
             type="text"
             placeholder="Whats your task?"
+            autoFocus
             required
           />
 

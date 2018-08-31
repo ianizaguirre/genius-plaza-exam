@@ -1,4 +1,5 @@
 import React, { Fragment, Component } from 'react';
+import Checkbox from './Checkbox';
 
 class Task extends Component {
   render() {
@@ -8,17 +9,11 @@ class Task extends Component {
 
     return (
       <Fragment>
+        <Checkbox taskStatus={this.props.taskStatus} index={this.props.index} />
+
         <p>Task {handleTaskNumber} ...</p>
 
         <p>{content}</p>
-
-        <button
-          onClick={() => {
-            this.props.taskStatus(index);
-          }}
-        >
-          TOGGLE
-        </button>
       </Fragment>
     );
   }
