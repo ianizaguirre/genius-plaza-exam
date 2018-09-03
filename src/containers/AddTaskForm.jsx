@@ -20,6 +20,7 @@ class AddTaskForm extends Component {
       completed: this.state.completed
     };
 
+    // If truthy
     if (makeNewTask.content) {
       // Send Newly Created Task UpStream
       this.props.addTask(makeNewTask);
@@ -40,6 +41,7 @@ class AddTaskForm extends Component {
             value={this.state.content}
             type="text"
             placeholder="Whats your task?"
+            autocomplete="off"
             autoFocus
             required
           />

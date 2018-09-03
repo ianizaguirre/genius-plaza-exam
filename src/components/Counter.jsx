@@ -1,5 +1,9 @@
-import React, { Fragment, Component } from 'react';
+import React, { Component } from 'react';
+import styled from 'styled-components';
 
+const Wrapper = styled.div`
+  text-align: center;
+`;
 class Counter extends Component {
   render() {
     const { activeCount } = this.props;
@@ -12,11 +16,11 @@ class Counter extends Component {
     const item_S = pluralize === 1 ? 'item' : 'items';
 
     return (
-      <Fragment>
+      <Wrapper>
         <p>
           <strong>{activeCount}</strong> {item_S} left
         </p>
-      </Fragment>
+      </Wrapper>
     );
   }
 }
