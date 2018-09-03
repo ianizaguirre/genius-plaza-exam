@@ -22,15 +22,13 @@ class Checkbox extends Component {
   render() {
     return (
       <Fragment>
-        <CheckBlock
-          type="checkbox"
-          onChange={() => {
-            this.props.taskStatus(this.props.index);
-          }}
-        />
+        <CheckBlock type="checkbox" checked={this.props.isChecked} />
       </Fragment>
     );
   }
 }
 
+// onChange={() => {
+//   this.props.taskStatus(this.props.index);
+// }}
 export default Checkbox;

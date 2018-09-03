@@ -8,7 +8,7 @@ import styled from 'styled-components';
 const Gutter = styled.div`
   width: 95%;
   margin: 0 auto;
-  max-width: 1050px;
+  max-width: 1015px;
 `;
 
 const Page = ({ children }) => (

@@ -4,7 +4,7 @@ import logo from './../logo.png';
 import styled from 'styled-components';
 
 const Wrapper = styled.header`
-  background-color: #222;
+  background-color: #33a8a5;
   height: 150px;
   padding: 20px;
   margin-bottom: 50px;
@@ -16,12 +16,13 @@ const Logo = styled.img`
 `;
 const Title = styled.h1`
   font-size: 1.5em;
+  letter-spacing: 0.5px;
 `;
 
 const Header = () => (
   <Fragment>
     <Wrapper>
-      <Title>To-Do List</Title>
+      <Title>Genius Plaza Todo App Test</Title>
       <Logo src={logo} className="App-logo" alt="logo" />
     </Wrapper>
   </Fragment>

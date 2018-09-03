@@ -1,9 +1,14 @@
-import React, { Fragment } from 'react';
+import React from 'react';
+import styled from 'styled-components';
 
 import Task from './Task';
 
+const Ul = styled.ul`
+  padding: 0;
+`;
+
 const Inventory = props => (
-  <Fragment>
+  <Ul>
     {props.toDoList.map((item, index) => (
       <Task
         key={item.id}
@@ -14,7 +19,7 @@ const Inventory = props => (
         deleteTask={props.deleteTask}
       />
     ))}
-  </Fragment>
+  </Ul>
 );
 
 export default Inventory;
