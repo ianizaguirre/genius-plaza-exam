@@ -23,7 +23,6 @@ class Counter extends Component {
     return (
       <Wrapper>
         <Text>
-          {' '}
           <strong>{activeCount}</strong> {item_S} left to Complete
         </Text>
       </Wrapper>

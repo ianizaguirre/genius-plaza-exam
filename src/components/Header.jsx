@@ -1,7 +1,6 @@
-import React, { Fragment } from 'react';
-import logo from './../logo.png';
-
+import React from 'react';
 import styled from 'styled-components';
+import logo from './../logo.png';
 
 const Wrapper = styled.header`
   background-color: #33a8a5;
@@ -20,12 +19,10 @@ const Title = styled.h1`
 `;
 
 const Header = () => (
-  <Fragment>
-    <Wrapper>
-      <Title>Genius Plaza Todo App Test</Title>
-      <Logo src={logo} className="App-logo" alt="logo" />
-    </Wrapper>
-  </Fragment>
+  <Wrapper>
+    <Title>Genius Plaza Todo App Test</Title>
+    <Logo src={logo} className="App-logo" alt="logo" />
+  </Wrapper>
 );
 
 export default Header;

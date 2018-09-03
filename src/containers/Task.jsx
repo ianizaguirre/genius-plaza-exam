@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import Checkbox from './Checkbox';
+import Checkbox from './../components/Checkbox';
 
 const Li = styled.li`
   list-style: none;
   background: #fefefe;
   border-bottom: 1px solid #f5f7f8;
-
   cursor: pointer;
 
   &:hover {
@@ -14,13 +13,13 @@ const Li = styled.li`
   }
 `;
 
-const GridContainerMain = styled.div`
+const GridContainer = styled.div`
   display: grid;
   grid-template-rows: auto;
   grid-template-columns: 1fr 100px;
   align-items: baseline;
 `;
-const GridContainer = styled.div`
+const GridWrapper = styled.div`
   display: grid;
   grid-template-rows: auto;
   grid-gap: 18px;
@@ -41,42 +40,34 @@ const ContentBlock = styled.div`
   color: #0085b6;
 `;
 
-// =====
-
 const Button = styled.button`
   color: #333;
   background-color: #fefefe;
-  border: 1px solid #DF2980;
+  border: 1px solid #df2980;
   font-size: 13px;
+  font-weight: 400;
   line-height: 15px;
   margin: 0 auto;
   width: 100%;
   padding: 8px 0px;
   cursor: pointer;
 
-  // display: ${props => (props.buttonIsVisible ? 'inline-block' : 'none')};
-    visibility: ${props => (props.buttonIsVisible ? 'visible' : 'hidden')};
-
-  font-weight: 400;
+  visibility: ${props => (props.buttonIsVisible ? 'visible' : 'hidden')};
 
   &:hover {
-    color: #DF2980;
+    color: #df2980;
     background-color: #edeced;
     outline: 0;
     border-color: transparent;
   }
 `;
 
-// =====
+// ===============================
 
 class Task extends Component {
   state = {
     isMouseOnTask: false,
     isChecked: false
-  };
-
-  handleDeleteTask = (id, index) => {
-    this.props.deleteTask(id, index);
   };
 
   mouseEnter = e => {
@@ -98,23 +89,24 @@ class Task extends Component {
 
     return (
       <Li onMouseEnter={e => this.mouseEnter(e)} onMouseLeave={e => this.mouseLeave(e)}>
-        <GridContainerMain>
-          <GridContainer onClick={e => this.toggleIsChecked(e)} onMouseEnter={e => this.mouseEnter(e)}>
+        <GridContainer>
+          <GridWrapper onClick={e => this.toggleIsChecked(e)} onMouseEnter={e => this.mouseEnter(e)}>
             <NumberBlock>Task {formatTaskNumber} </NumberBlock>
 
             <ContentBlock>{content}</ContentBlock>
 
             <Checkbox taskStatus={this.props.taskStatus} index={index} isChecked={this.state.isChecked} />
-          </GridContainer>
+          </GridWrapper>
+
           <Button
             buttonIsVisible={this.state.isMouseOnTask}
             onClick={() => {
-              this.handleDeleteTask(id, index);
+              this.props.deleteTask(id, index);
             }}
           >
             Delete task
           </Button>
-        </GridContainerMain>
+        </GridContainer>
       </Li>
     );
   }

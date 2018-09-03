@@ -1,4 +1,4 @@
-import React, { Fragment, Component } from 'react';
+import React, { Fragment } from 'react';
 import styled from 'styled-components';
 
 const CheckBlock = styled.input`
@@ -11,24 +11,17 @@ const CheckBlock = styled.input`
     border-radius: 50px;
     cursor: pointer;
     display: inline-block;
-    left: -7px;
+    left: -8px;
     top: -7px;
     content: ' ';
     position: relative;
   }
 `;
 
-class Checkbox extends Component {
-  render() {
-    return (
-      <Fragment>
-        <CheckBlock type="checkbox" checked={this.props.isChecked} />
-      </Fragment>
-    );
-  }
-}
+const Checkbox = props => (
+  <Fragment>
+    <CheckBlock type="checkbox" checked={props.isChecked} />
+  </Fragment>
+);
 
-// onChange={() => {
-//   this.props.taskStatus(this.props.index);
-// }}
 export default Checkbox;

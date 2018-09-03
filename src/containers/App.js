@@ -1,10 +1,8 @@
 import React, { Component, Fragment } from 'react';
-
 import Header from './../components/Header';
 import Page from './../components/Page';
 import Inventory from './../components/Inventory';
 import Counter from './../components/Counter';
-
 import AddTaskForm from './AddTaskForm';
 
 class App extends Component {
