@@ -25,15 +25,13 @@ This application is small, so I decided to manage state with nothing more than `
 </details>
 
 
-
 * App.js, Task.jsx, and AddTaskForm.jsx contain State.
   * App.jsx state contains critical data being used to drive multiple components.
-  * AddTaskForm.jsx contains non-critical UI state and creates the structure of a Task, which is then added to the `toDoList: []` array in App.js.
+  * AddTaskForm.jsx contains non-critical UI state and creates the structure of a Task, which is then added to the App.js state object inside of its `toDoList: []` array.
   * Task.jsx contains non-critical UI state.
 
 * Page.jsx uses the `{children}` prop.
-  * `Page.jsx` is meant to be the general layout of a page. If I were to make an additional page in my application, this would provide the flexibility and help needed for code reuse.
-
+  * Page.jsx is meant to be the general layout of a page. If I were to make an additional page in my application, this would provide the flexibility and help needed for code reuse.
 
 &nbsp;
 
@@ -49,7 +47,7 @@ This application is small, so I decided to manage state with nothing more than `
 </details>
 
 
-### Todo List Example
+### Application Screenshot
 
 <details>
 <summary>Show</summary>
@@ -65,15 +63,15 @@ This application is small, so I decided to manage state with nothing more than `
 
 #### Getting Started
 
-Fork or download this repo and ...
+Fork or download this repo and...
 
-Install packages:
+1. Install packages:
 
 ```bash
 yarn install
 ```
 
-Then run the local server:
+2. Then run the local server:
 
 ```bash
 yarn start
@@ -83,4 +81,4 @@ yarn start
 
 ## Author
 
-:heart: Created by [Ian Izaguirre](ian@izaguir.re)
+:heart: Created by [Ian Izaguirre](https://github.com/ianizaguirre)
